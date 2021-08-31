@@ -120,16 +120,19 @@
 					calculodecimal = calculodecimal + queimando;
 					calculofinal = calculofinal - 1;
 				}
-				calculodecimal = calculodecimal*decimvl;
-				imagem.drawImage(cbde, 75, 48);
-				imagem.fillStyle = "Black";
-				imagem.fillText(calculodecimal, 80, 75);
-
+				if(!isNaN(calculodecimal)){
+				if(calculodecimal != 0) {
+					calculodecimal = calculodecimal*decimvl;
+					imagem.drawImage(cbde, 75, 48);
+					imagem.fillStyle = "Black";
+					imagem.fillText(calculodecimal, 80, 75);
+				}
 				if(qitens.value != 0 && select.value != 0) {
 					if(qitens.value >= queimando) {
 						imagem.fillStyle = "Black";
 						imagem.fillText(calculofinal, 60, 75);
 					}
+				}
 				}
 		}
 		setInterval(alertar, 100)
