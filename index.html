@@ -1,3 +1,5 @@
+
+</html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,13 +40,21 @@
 					<option value="1">Madeira</option>
 				</select>
 			</form>
-		<div class="canvas">
-			<canvas width="176" height="160"></canvas>
-		</div>
+			<div class="flex">
+				<div class="canvas1">
+					<canvas width="176" height="160" id="esquerda"></canvas>
+				</div>
+				<div class="canvas">
+					<canvas width="176" height="160" id="Fornalha"></canvas>
+				</div>
+				<div class="canvas1">
+					<canvas width="176" height="160" id="direita"></canvas>
+				</div>
+				</div>
 	</main>
 </body>
 	<script>
-		var canvas = document.querySelector('canvas');
+		var canvas = document.querySelector('#Fornalha');
 		var imagem = canvas.getContext('2d');
 		var select = document.getElementById('carvão')
 		
@@ -82,9 +92,12 @@
 
 		function fornalhaf() {
 			slo = cb[select.value];
+			imagem.clearRect(0, 0, 176, 160);
+			cex.clearRect(0, 0, 176, 160)
 			imagem.drawImage(fornalha, 0, 0);
 			if(slo != "none") {
 				imagem.drawImage(slo, 55, 48);
+				cex.drawImage(slo, 0, 20);
 			}
 		}
 		setInterval(fornalhaf, 100);
@@ -126,15 +139,22 @@
 					imagem.drawImage(cbde, 75, 48);
 					imagem.fillStyle = "Black";
 					imagem.fillText(calculodecimal, 80, 75);
+					cex.drawImage(cbde, 0, 50);
+					cex.fillStyle = "Black";
+					cex.fillText(calculodecimal, 20, 70);
 				}
 				if(qitens.value != 0 && select.value != 0) {
 					if(qitens.value >= queimando) {
 						imagem.fillStyle = "Black";
 						imagem.fillText(calculofinal, 60, 75);
+						cex.fillStyle = "Black";
+						cex.fillText(calculofinal, 20, 40);
 					}
 				}
 				}
 		}
 		setInterval(alertar, 100)
+		var canvase = document.querySelector('#esquerda');
+		var cex = canvase.getContext('2d');
 	</script>
 </html>
