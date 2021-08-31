@@ -1,0 +1,16 @@
+header div {
+	display: flex;
+    justify-content: space-between;
+}
+header ul {
+    display: flex;
+}
+.form {
+    display: flex;
+    flex-flow: column;
+}
+form {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap column;
+}

@@ -1,0 +1,45 @@
+.canvas {
+    width: 30%;
+    margin: 0 auto;
+}
+canvas {
+    width: 100%;
+}
+header {
+    background-color: azure;
+    padding: 0.5px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+header img {
+    width: 25%;
+}
+header ul {
+    background-color: rgb(252, 231, 203);
+    margin-right: 60px;
+    font-size: 22px;
+    padding: 15px;
+    border: 1px solid black;
+}
+header a {
+    text-decoration: none;
+    color: black
+}
+header img {
+    border: 0.5.px solid black;
+}
+main {
+    background-color: rgb(207, 242, 243);
+}
+form {
+    height: 100px;
+}
+label {
+    font-size: 22px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+}
+select {
+    font-size: 15px;
+}

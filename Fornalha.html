@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculadora Fornalha</title>
+	<link rel="stylesheet" href="Reset.css">
+	<link rel="stylesheet" href="Style.css">
+	<link rel="stylesheet" href="Flexbox.css">
+</head>
+<body>
+	<header>
+		<div>
+			<img src="Logo.png"></img>
+			<nav>
+					<ul><a href="index.html">Home</a></ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section class="form">
+			<form>
+				<label for="carvão">Tipo de Item</label>
+				<select id="carvão">
+					<option value="0"></option>
+					<option value="1">Carvão</option>
+					<option value="2">Vara de Blase</option>
+					<option value="3">Madeira</option>
+					<option value="4">Bloco de Carvão</option>
+					<option value="5">Lava</option>
+				</select>
+				<label for="Itens">Quantos itens</label>
+				<input type="number" id="Itens"></input>
+			</form>
+		</section>
+		<div class="canvas">
+			<canvas width="176" height="160"></canvas>
+		</div>
+	</main>
+</body>
+	<script>
+		var canvas = document.querySelector('canvas');
+		var imagem = canvas.getContext('2d');
+		var select = document.getElementById('carvão')
+		
+		var fornalha = new Image();
+		fornalha.src = "furnacea.png";
+
+		var carvãof = new Image();
+		carvãof.src = "carvão.png";
+
+		var varaf = new Image();
+		varaf.src = "vara.png";
+
+		var madeiraf = new Image();
+		madeiraf.src = "madeira.png";
+
+		var blcarvãof = new Image();
+		blcarvãof.src = "blcarvão.png";
+
+		var lavaf = new Image();
+		lavaf.src = "lava.png";
+
+		var cb = new Array(
+			"none",
+			carvãof,
+			varaf,
+			madeiraf, 
+			blcarvãof, 
+			lavaf
+			);
+		var slo = cb[select.value];
+
+		function fornalhaf() {
+			slo = cb[select.value];
+			imagem.drawImage(fornalha, 0, 0);
+			if(slo != "none") {
+				imagem.drawImage(slo, 55, 48);
+			}
+		}
+		setInterval(fornalhaf, 100);
+
+		var qitens = document.getElementById('Itens');
+		var queima = new Array(
+			0,
+			8,
+			12,
+			1,
+			80,
+			100
+		)
+		var queimando = queima[select.value];
+		var ativoualert = false;
+		function alertar() {
+			console.log(select.value)
+			queimando = queima[select.value];
+			if(qitens.value != 0 && select.value != 0) {
+				if(qitens.value >= queimando) {
+					imagem.fillStyle = "Black";
+					imagem.fillText(qitens.value/queimando, 60, 75);
+				}
+			}
+		}
+		setInterval(alertar, 100)
+	</script>
+</html>
