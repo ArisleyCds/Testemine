@@ -2,6 +2,10 @@
     width: 30%;
     margin: 0 auto;
 }
+.canvas1 {
+    width: 30%;
+    margin: 0 0 0 10px;
+}
 canvas {
     width: 100%;
 }
@@ -42,4 +46,8 @@ label {
 }
 select {
     font-size: 15px;
+}
+.flex {
+    width: 100%;
+    background-color: rgb(139, 200, 209);
 }
